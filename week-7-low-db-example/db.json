@@ -1,0 +1,24 @@
+{
+  "coffeeTrackerData": [
+    {
+      "date": "2024-08-20T22:22:57.001Z",
+      "coffee": "espresso"
+    },
+    {
+      "date": "2024-08-20T22:23:08.161Z",
+      "coffee": "mocha"
+    },
+    {
+      "date": "2024-08-20T22:23:24.678Z",
+      "coffee": "mocha"
+    },
+    {
+      "date": "2024-08-20T22:23:33.918Z",
+      "coffee": "espresso"
+    },
+    {
+      "date": "2024-08-20T22:23:49.836Z",
+      "coffee": "cappuccino"
+    }
+  ]
+}
