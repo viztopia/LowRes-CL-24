@@ -2,23 +2,27 @@
   "coffeeTrackerData": [
     {
       "date": "2024-08-20T22:22:57.001Z",
-      "coffee": "espresso"
+      "coffee": "1"
     },
     {
       "date": "2024-08-20T22:23:08.161Z",
-      "coffee": "mocha"
+      "coffee": "2"
     },
     {
       "date": "2024-08-20T22:23:24.678Z",
-      "coffee": "mocha"
+      "coffee": "1"
     },
     {
       "date": "2024-08-20T22:23:33.918Z",
-      "coffee": "espresso"
+      "coffee": "2"
     },
     {
       "date": "2024-08-20T22:23:49.836Z",
-      "coffee": "cappuccino"
+      "coffee": "3"
+    },
+    {
+      "date": "2024-09-14T20:11:43.310Z",
+      "coffee": "2"
     }
   ]
 }

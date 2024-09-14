@@ -7,7 +7,7 @@ const app = express();
 
 // DB - 1 - Set up lowdb
 const adapter = new JSONFile('db.json');
-const db = new Low(adapter);
+const db = new Low(adapter, {});
 
 // Initialize the database with an empty coffeeTrackerData array
 db.data ||= { coffeeTrackerData: [] };
@@ -15,7 +15,7 @@ db.data ||= { coffeeTrackerData: [] };
 // to parse JSON
 app.use(express.json());
 
-app.post('/noCups', async (req, res) => {
+app.post('/noCups', (req, res) => {
     console.log(req.body);
     let currentDate = new Date().toISOString();
     let obj = {
@@ -25,21 +25,25 @@ app.post('/noCups', async (req, res) => {
 
     // DB - 2 - add values to the DB
     db.data.coffeeTrackerData.push(obj);
-    await db.write();
-
-    res.json({task: "success"});
+    db.write()
+        .then(() => {
+            res.json({ task: "success" });
+        })
 });
 
 app.use('/', express.static('public'));
 
-app.listen(5500, () => {
-    console.log('listening at localhost:5500');
+let port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log('Server listening at port: ' + port);
 });
 
 // add route to get all coffee track information
-app.get('/getCups', async (req, res) => {
+app.get('/getCups', (req, res) => {
     // DB - 3 - fetch from the DB
-    await db.read();
-    let obj = { data: db.data.coffeeTrackerData };
-    res.json(obj);
+    db.read()
+        .then(() => {
+            let obj = { data: db.data.coffeeTrackerData };
+            res.json(obj);
+        });
 });
