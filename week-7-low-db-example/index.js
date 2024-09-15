@@ -7,10 +7,7 @@ const app = express();
 
 // DB - 1 - Set up lowdb
 const adapter = new JSONFile('db.json');
-const db = new Low(adapter, {});
-
-// Initialize the database with an empty coffeeTrackerData array
-db.data ||= { coffeeTrackerData: [] };
+const db = new Low(adapter, {coffeeTrackerData: []});
 
 // to parse JSON
 app.use(express.json());
